@@ -1,9 +1,18 @@
+int mode;
+final int intro= 0;
+final int game = 1;
+final int pause = 2;
+final int gameover = 3;
+
 boolean upKey, downKey, leftKey, rightKey, spaceKey;
 ship myShip;
 ArrayList<gameObject> myObjects;
 
 void setup () {
+ 
   size (800, 600);
+ // mode = intro;
+  rectMode(CENTER);
   imageMode(CENTER);
   myShip = new ship();
   myObjects = new ArrayList<gameObject>();
@@ -29,6 +38,20 @@ void draw() {
     }
     
   }
+
+
+ if (mode == intro) {
+    intro();
+  } else if (mode == game) {
+    game();
+  } else if (mode == pause) {
+    pause();
+  } else if (mode == gameover) {
+    gameOver();
+  } else {
+    println("Error: mode = " + mode);
+  }
+
 }
 
 void keyPressed() {

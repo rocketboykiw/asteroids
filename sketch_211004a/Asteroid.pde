@@ -32,14 +32,28 @@ class Asteroid extends gameObject {
         if (dist(location.x, location.y, myObj.location.x, myObj.location.y)<= size/2 + myObj.size) {
           myObj.lives= 0;
           lives = 0;
-          if(size>50){
-          myObjects.add(new Asteroid(size/2, location.x, location.y));
-          myObjects.add(new Asteroid(size/2, location.x, location.y));
+          if (size>50) {
+            myObjects.add(new Asteroid(size/2, location.x, location.y));
+            myObjects.add(new Asteroid(size/2, location.x, location.y));
           }
         }
       }
 
       i++;
+
+      if (myObj instanceof ship) {
+        if (dist(location.x, location.y, myObj.location.x, myObj.location.y)<= size/2 + myObj.size) {
+
+          if (myObj.immune >50) {
+            myObj.lives = myObj.lives - 1;
+            myObj.immune = 0;
+
+            if (myObj.lives == 0) {
+              mode = gameOver;
+            }
+          }
+        }
+      }
     }
   }
 }

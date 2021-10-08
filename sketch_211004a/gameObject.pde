@@ -3,7 +3,7 @@ class gameObject{
   PVector location;
   PVector velocity;
   int size;
-  
+   int immune;
   gameObject() {
     
     

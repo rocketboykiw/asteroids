@@ -2,7 +2,7 @@ int mode;
 final int intro= 0;
 final int game = 1;
 final int pause = 2;
-final int gameover = 3;
+final int gameOver = 3;
 
 boolean upKey, downKey, leftKey, rightKey, spaceKey;
 ship myShip;
@@ -25,19 +25,9 @@ void setup () {
 void draw() {
   background(0);
 
-  int i= 0;
-  while (i<myObjects.size()) {
-    gameObject myObj =myObjects.get(i);
-    myObj.show();
-    myObj.act();
+ 
     
-    if (myObj.lives == 0){
-     myObjects.remove(i); 
-    }else{
-     i++; 
-    }
-    
-  }
+
 
 
  if (mode == intro) {
@@ -46,7 +36,7 @@ void draw() {
     game();
   } else if (mode == pause) {
     pause();
-  } else if (mode == gameover) {
+  } else if (mode == gameOver) {
     gameOver();
   } else {
     println("Error: mode = " + mode);

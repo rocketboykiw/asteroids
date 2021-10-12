@@ -1,4 +1,5 @@
 class gameObject{
+
   int lives;
   PVector location;
   PVector velocity;

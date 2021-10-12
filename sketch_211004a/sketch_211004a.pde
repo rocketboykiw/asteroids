@@ -8,6 +8,9 @@ boolean upKey, downKey, leftKey, rightKey, spaceKey;
 ship myShip;
 ArrayList<gameObject> myObjects;
 
+
+
+ int al;
 void setup () {
  
   size (800, 600);
@@ -17,6 +20,9 @@ void setup () {
   myShip = new ship();
   myObjects = new ArrayList<gameObject>();
   myObjects.add(myShip);
+  myObjects.add(new Asteroid());
+  myObjects.add(new Asteroid());
+  myObjects.add(new Asteroid());
   myObjects.add(new Asteroid());
   myObjects.add(new Asteroid());
   myObjects.add(new Asteroid());

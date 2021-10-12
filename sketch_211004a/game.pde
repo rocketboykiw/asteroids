@@ -11,9 +11,9 @@ void game() {
     } else {
       i++;
     }
- if (myObj instanceof ship) {
-print (myObj.lives);
-}  
+// if (myObj instanceof ship) {
+//print (myObj.lives);
+//}  
 }
 
 }

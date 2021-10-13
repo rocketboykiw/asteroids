@@ -10,11 +10,11 @@ ArrayList<gameObject> myObjects;
 
 
 
- int al;
+int al;
 void setup () {
- 
+
   size (800, 600);
- // mode = intro;
+  // mode = intro;
   rectMode(CENTER);
   imageMode(CENTER);
   myShip = new ship();
@@ -26,17 +26,18 @@ void setup () {
   myObjects.add(new Asteroid());
   myObjects.add(new Asteroid());
   myObjects.add(new Asteroid());
+  myObjects.add(new UFO());
 }
 
 void draw() {
   background(0);
 
- 
-    
 
 
 
- if (mode == intro) {
+
+
+  if (mode == intro) {
     intro();
   } else if (mode == game) {
     game();
@@ -47,7 +48,6 @@ void draw() {
   } else {
     println("Error: mode = " + mode);
   }
-
 }
 
 void keyPressed() {

@@ -10,7 +10,7 @@ class Asteroid extends gameObject {
   }
 
   Asteroid(int s, float x, float y) {
-    al = 18;
+
     lives = 1;
     location = new PVector (x, y);
     velocity = new PVector (0, 1);
@@ -27,7 +27,7 @@ class Asteroid extends gameObject {
   void act() {
     super.act(); 
 
-println(al);
+//println(al);
     int i= 0;
     while (i<myObjects.size()) {
       gameObject myObj =myObjects.get(i);

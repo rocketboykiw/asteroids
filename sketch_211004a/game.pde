@@ -1,5 +1,7 @@
 
 void game() {
+
+  
   int i= 0;
   while (i<myObjects.size()) {
     gameObject myObj =myObjects.get(i);

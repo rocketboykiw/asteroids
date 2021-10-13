@@ -33,6 +33,7 @@ class ship extends gameObject {
     shotTimer++;
 
     if (upKey) {
+    
       velocity.add(direction);
       myObjects.add(new fire());
     }

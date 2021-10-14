@@ -16,15 +16,25 @@ class ship extends gameObject {
   }
   //3.behavior
   void show() {
+   
     pushMatrix();
     translate (location.x, location.y);
     rotate(direction.heading());
-    noFill();
+   
     stroke(255);
     strokeWeight(5);
+    if(immune<100){
+      
+      fill (255,0,0);
+      
+    }else{
+       fill(0,255,0);
+    }
     triangle(-25, -12.5, -25, 12.5, 25, 0);
 
     popMatrix();
+    
+   
   }
 
   void act () {

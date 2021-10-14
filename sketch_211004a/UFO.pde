@@ -15,7 +15,7 @@ class UFO extends gameObject {
     fill(255 );
     stroke(255);
     strokeWeight(5);
-    rect(location.x, location.y, size, size);
+    ellipse(location.x, location.y, size/3, size/3);
 
     popMatrix();
   }

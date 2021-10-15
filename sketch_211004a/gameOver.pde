@@ -37,7 +37,7 @@ void gameOverClicks() {
   myObjects.add(new Asteroid());
   myObjects.add(new Asteroid());
   myObjects.add(new Asteroid());    
-  
+  myObjects.add(new UFO());
   
   }
 }

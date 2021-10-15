@@ -17,6 +17,7 @@ void setup () {
   // mode = intro;
   rectMode(CENTER);
   imageMode(CENTER);
+  //myUFO = new UFO();
   myShip = new ship();
   myObjects = new ArrayList<gameObject>();
   myObjects.add(myShip);

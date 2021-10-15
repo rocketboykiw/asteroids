@@ -27,6 +27,7 @@ void gameOverClicks() {
 
     mode = intro;
  
+ 
       myShip = new ship();
   myObjects = new ArrayList<gameObject>();
   myObjects.add(myShip);

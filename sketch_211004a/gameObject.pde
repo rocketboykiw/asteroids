@@ -17,7 +17,7 @@ class gameObject{
   
   
   void act(){
-     location.add(velocity);
+  //   location.add(velocity);
     
      if (location.y < -50) location.y =height +50;
     if ( location.y >height +50) location.y = -50;

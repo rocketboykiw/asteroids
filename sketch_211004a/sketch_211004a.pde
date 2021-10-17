@@ -3,21 +3,23 @@ final int intro= 0;
 final int game = 1;
 final int pause = 2;
 final int gameOver = 3;
+final int gameOver1 = 4;
 
 boolean upKey, downKey, leftKey, rightKey, spaceKey;
+
 ship myShip;
 ArrayList<gameObject> myObjects;
 
-
+PFont night ;
 
 int al;
 void setup () {
 
   size (800, 600);
-  // mode = intro;
+   mode = intro;
   rectMode(CENTER);
   imageMode(CENTER);
-  //myUFO = new UFO();
+  
   myShip = new ship();
   myObjects = new ArrayList<gameObject>();
   myObjects.add(myShip);
@@ -28,12 +30,17 @@ void setup () {
   myObjects.add(new Asteroid());
   myObjects.add(new Asteroid());
   myObjects.add(new UFO());
+
+//fonts
+night = createFont("Hey Comic", 58);
+
+
 }
 
 void draw() {
   background(0);
 
-
+//textFont(night);
 
 
 
@@ -46,7 +53,9 @@ void draw() {
     pause();
   } else if (mode == gameOver) {
     gameOver();
-  } else {
+  } else if (mode == gameOver1){
+    gameOver1();
+  }else {
     println("Error: mode = " + mode);
   }
 }

@@ -5,6 +5,7 @@ void game() {
   int i= 0;
   while (i<myObjects.size()) {
     gameObject myObj =myObjects.get(i);
+    
     myObj.show();
     myObj.act();
 
@@ -13,12 +14,12 @@ void game() {
     } else {
       i++;
     }
-// if (myObj instanceof ship) {
-//print (myObj.lives);
-//}  
+
+
+  }  
 }
 
-}
+
 
 void gameClicks() {
 }

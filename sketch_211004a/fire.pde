@@ -1,6 +1,10 @@
 class fire extends gameObject {
+ 
+   //instance variable
   int t;
 PVector nudge;
+ 
+  //constructor
   fire() {
     lives = 1;
     size =int(random(5,12));

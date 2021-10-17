@@ -1,17 +1,15 @@
-
-
-void gameOver() {
-  background(255, 0, 0);
+void gameOver1() {
+  background(0, 255, 0);
   fill (0);
   textSize(110);
-  text ("GAME OVER", 100, 300);
+  text ("WINNER", 200, 300);
 
 
 
   if (mouseX > 300 && mouseX < 500 && mouseY > 450 && mouseY <550) {
-    fill (0, 255, 0);
-  } else {
     fill (255, 0, 0);
+  } else {
+    fill (0, 100, 0);
   }
 
   strokeWeight(5);
@@ -21,7 +19,7 @@ void gameOver() {
   textSize(30);
   text("GO AGAIN", 325, 520);
 }
-void gameOverClicks() {
+void gameOver1Clicks() {
 
 
   if (mouseX > 300 && mouseX < 500 && mouseY > 450 && mouseY <550) {

@@ -34,7 +34,7 @@ class ship extends gameObject {
 
     popMatrix();
     
-   
+   text("lives"+lives , 310, 520);
   }
 
   void act () {

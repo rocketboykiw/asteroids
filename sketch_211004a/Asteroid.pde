@@ -1,5 +1,8 @@
 class Asteroid extends gameObject {
-
+boolean win;
+  
+  
+  //constructor
   Asteroid() {
     al =18;
     lives = 1;
@@ -27,16 +30,18 @@ class Asteroid extends gameObject {
   void act() {
     super.act(); 
 
-    //println(al);
+    //asteroid destruction
     int i= 0;
     while (i<myObjects.size()) {
       gameObject myObj =myObjects.get(i);
+      //asteroid destruction
       if (myObj instanceof Bullet) {
         if (dist(location.x, location.y, myObj.location.x, myObj.location.y)<= size/2 + myObj.size) {
           myObj.lives= 0;
           lives = 0;
           al--;
 
+          //my particals for asteroids
           myObjects.add(new particals(location.x, location.y));
           myObjects.add(new particals(location.x, location.y));
           myObjects.add(new particals(location.x, location.y));
@@ -48,25 +53,32 @@ class Asteroid extends gameObject {
           myObjects.add(new particals(location.x, location.y));
           myObjects.add(new particals(location.x, location.y));
           myObjects.add(new particals(location.x, location.y));
+         
+          
+          //asteroid counting 
           if (al == 0) {
-            mode = gameOver;
+            mode = gameOver1;
+           
           }
-
+//second asteroid
           if (size>50) {
-            myObjects.add(new Asteroid(size/2, location.x, location.y));
+             myObjects.add(new Asteroid(size/2, location.x, location.y));
             myObjects.add(new Asteroid(size/2, location.x, location.y));
           }
         }
       }
 
       i++;
-
+      //immune and lives 
       if (myObj instanceof ship) {
         if (dist(location.x, location.y, myObj.location.x, myObj.location.y)<= size/2 + myObj.size) {
 
           if (myObj.immune >100) {
             myObj.lives = myObj.lives - 1;
             myObj.immune = 0;
+
+
+
 
             if (myObj.lives == 0) {
               mode = gameOver;

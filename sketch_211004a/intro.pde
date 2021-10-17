@@ -12,7 +12,7 @@ void intro() {
   rect (400, 500, 200, 100);
   fill (0);
   textSize(58);
-  
+ textFont(night);
   text("START", 310, 520);
 
 

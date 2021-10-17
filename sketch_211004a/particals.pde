@@ -1,8 +1,11 @@
 class particals extends gameObject {
+  
+   // instance variable
   int t;  
-
   PVector nudge;
-  particals( float x, float y) { // constructors
+ 
+ //constructor
+  particals( float x, float y) { 
     lives = 1;
     size = 10;
     location = new PVector (x, y);

@@ -1,61 +1,51 @@
 class UFO extends gameObject {
+
   //instance variables
- 
- 
   int spawn;
+
   //constructor
   UFO() {
-
-    //vy = myShip.location.y - location.y;
-    //vx = myShip.location.x - location.x;
-  
     lives = 1;
     size = 100;
 
-    //where the UFO will spawn code
     spawn = int(random(0, 4));
     if (spawn == 0 ) {
-      location = new PVector (0, random(0, height));
-      velocity = new PVector(2, 0);
-      velocity.setMag(1.5);
+      location = new PVector(-50, random(-50, height-50));
+      velocity = new PVector(2, 1);
     }
     if (spawn == 1 ) {
-      location = new PVector (width, random(0, height));
-      velocity = new PVector(-2, 0);
-      velocity.setMag(1.5);
+      location = new PVector(height + 50, random(-50, height-50)); // right
+      velocity = new PVector(-2, -1);
     }
     if (spawn == 2 ) {
-      location = new PVector (random(0, width), 0);
-      velocity = new PVector(0, 2);
-      velocity.setMag(1.5);
+      location = new PVector(random(-50, width-50), -50);  // top
+      velocity = new PVector(1, 2);
     }
     if (spawn == 3 ) {
-      location = new PVector (random(0, width), height);
-      velocity = new PVector(0, -2);
-      velocity.setMag(1.5);
+      location = new PVector(random(-50, width-50), width-50);  // bottom
+      velocity = new PVector(-1, -2);
     }
-
-
-
-
   }
 
   void show() {
-
     fill(0);
-   // ellipse(location.x, location.y - 20, 35, 30);
     ellipse(location.x, location.y, 70, 40);
   }
 
   void act() {
     super.act();
-    
-   
-    }
+    int b= 0; 
 
-}
-    
-   
-      
-    
- 
+    while (b<myObjects.size()) {
+      gameObject myObj =myObjects.get(b);
+
+      if (myObj instanceof Bullet) {
+        if (dist(location.x, location.y, myObj.location.x, myObj.location.y)<= size/2 + myObj.size) {
+          myObj.lives= 0;
+          lives = 0;
+          //  myObjects.add(new Particals(location.x, location.y));
+        }
+      }
+    }
+  }
+} 

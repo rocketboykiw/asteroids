@@ -34,18 +34,18 @@ class UFO extends gameObject {
 
   void act() {
     super.act();
-    int b= 0; 
+    //int b= 0; 
 
-    while (b<myObjects.size()) {
-      gameObject myObj =myObjects.get(b);
+    //while (b<myObjects.size()) {
+    //  gameObject myObj =myObjects.get(b);
 
-      if (myObj instanceof Bullet) {
-        if (dist(location.x, location.y, myObj.location.x, myObj.location.y)<= size/2 + myObj.size) {
-          myObj.lives= 0;
-          lives = 0;
-          //  myObjects.add(new Particals(location.x, location.y));
-        }
-      }
-    }
+    //  if (myObj instanceof Bullet) {
+    //    if (dist(location.x, location.y, myObj.location.x, myObj.location.y)<= size/2 + myObj.size) {
+    //      myObj.lives= 0;
+    //      lives = 0;
+    //      //  myObjects.add(new Particals(location.x, location.y));
+    //    }
+    //  }
+    //}
   }
 } 
